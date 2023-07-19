@@ -1,9 +1,6 @@
 <?php
-$hostName = "localhost";
-$user = "root";
-$pass = "";
-$db = "pc_00";
-$enlace = mysqli_connect($hostName, $user, $pass, $db);
-if (!$enlace) {
-    echo "Error de Conexion";
+try {
+    $mysqli = new mysqli("localhost", "root",  "", "mp_01");
+} catch (mysqli_sql_exception $e) {
+    echo "Error: " . $e->getMessage();
 };
