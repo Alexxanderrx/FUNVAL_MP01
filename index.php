@@ -8,7 +8,7 @@
     <link href="./output.css" rel="stylesheet">
 </head>
 
-<body class="h-screen flex justify-center align-items-center ">
+<body class=" h-screen flex justify-center align-items-center ">
     <div class=" mt-12 w-96">
         <form class="flex-col w-96 p-10 border border-gray-400 rounded-3xl" name="formularioSingUp" method="post"
             action="infoHall.php">
@@ -68,7 +68,7 @@
             </div>
             <div class="flex text-sm justify-center">
                 <p>Already a member?</p>
-                <p class=" text-sky-500"><a href="./login.php">Login</a></p>
+                <p class=" text-sky-500"><a href="./login.php">&#160;Login</a></p>
             </div>
 
         </form>

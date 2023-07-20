@@ -36,7 +36,7 @@
                         type="text" name="emailLg" placeholder="Email" />
                 </div>
 
-                <div class="relative block mb-5">
+                <div class="relative block mb-1">
                     <span class="absolute inset-y-0 left-0 flex items-center pl-2">
                         <svg class="h-5 w-5 fill-slate-300" viewBox="0 0 20 20">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -53,6 +53,15 @@
                 </div>
 
             </div>
+            <p class="text-center  text-red-700">&#160;
+                <?php
+                session_start();
+                if (isset($_SESSION["error_lg"])) {
+                    echo $_SESSION["error_lg"];
+                };
+                unset($_SESSION["error_lg"]);
+                ?>
+            </p>
             <button class="mb-5 w-full bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded-lg" type="submit"
                 name="start">Login</button>
 
@@ -66,7 +75,7 @@
             </div>
             <div class="flex text-sm justify-center">
                 <p>Don't you have an account yet?</p>
-                <p class=" text-sky-500"><a href="./index.php">Register</a></p>
+                <p class=" text-sky-500"><a href="./index.php">&#160;Register</a></p>
             </div>
 
         </form>

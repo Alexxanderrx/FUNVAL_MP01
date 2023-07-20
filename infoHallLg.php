@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         header("Location: personalInfo.php");
     } else {
+        $_SESSION["error_lg"] = "La cuenta no existe.";
         header("Location: login.php");
         die();
     }
