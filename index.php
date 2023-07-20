@@ -55,6 +55,15 @@
                 </div>
 
             </div>
+            <p class="text-center  text-red-700">&#160;
+                <?php
+                session_start();
+                if (isset($_SESSION["error_rg"])) {
+                    echo $_SESSION["error_rg"];
+                };
+                unset($_SESSION["error_rg"]);
+                ?>
+            </p>
             <button class="mb-5 w-full bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded-lg" type="submit"
                 name="start">Star coding now</button>
 

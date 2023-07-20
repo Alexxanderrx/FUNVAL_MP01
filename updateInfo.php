@@ -20,18 +20,18 @@ if (!isset($_SESSION["datos"])) {
 </head>
 
 <body class="h-[50rem] w-full">
-    <nav class="flex  pl-10 pr-10 w-full h-16 border justify-between items-center ">
+    <nav class="flex  pl-10 pr-10 w-full h-16 justify-between items-center ">
         <div class="w-32">
             <img src="./imgs/devchallenges.svg" alt="devchallenges.svg" />
         </div>
-        <div id="open" class="flex  border justify-around items-center">
-            <div class="border rounded-md w-8 overflow-hidden">
+        <div id="open" class="flex   justify-around items-center">
+            <div class=" rounded-md w-8 overflow-hidden">
                 <img src="./imgs/user_placeH.jpg" alt="photo.jpg">
             </div>
             <p class=" pl-4 pr-4">Alex</p>
 
-            <svg id="spin" class="w-6 h-6  text-gray-800 dark:text-white" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 30 8">
+            <svg id="spin" style="transition-duration: 500ms;" class="w-6 h-6  text-gray-800 dark:text-white"
+                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 30 8">
                 <path
                     d="M15.434 1.235A2 2 0 0 0 13.586 0H2.414A2 2 0 0 0 1 3.414L6.586 9a2 2 0 0 0 2.828 0L15 3.414a2 2 0 0 0 .434-2.179Z" />
             </svg>
@@ -56,7 +56,7 @@ if (!isset($_SESSION["datos"])) {
         </ul>
     </nav>
 
-    <form class="h-[50rem] flex flex-col justify-start items-center w-full " action="infoHallLg.php">
+    <form class="h-[50rem] flex flex-col justify-start items-center w-full " method="POST" action="updateHall.php">
         <!-- <p class="text-3xl mb-2 mt-4">Personal info</p> -->
         <a href="personalInfo.php" class="text-sky-500 w-3/5 mb-2 mt-4">&#60;&#160;Back</a>
 
@@ -90,32 +90,32 @@ if (!isset($_SESSION["datos"])) {
             <div class="h-24 w-full flex flex-col justify-center items-start text-sm  px-8">
                 <p class="">Name</p>
                 <input class="h-12 w-1/2 bg-white text-black border rounded-lg pl-4" type="text"
-                    placeholder="Enter your name..." size="30">
+                    placeholder="Enter your name..." size="30" name="newName">
             </div>
 
             <div class="h-24 w-full flex flex-col justify-center items-start text-sm  px-8">
                 <p class="">Bio</p>
                 <input class="h-24 w-1/2 bg-white text-black border rounded-lg pl-4 overflow-scroll" type="text"
-                    placeholder="Enter your bio..." size="30">
+                    placeholder="Enter your bio..." size="30" name="newBio">
             </div>
 
 
             <div class="h-24 w-full flex flex-col justify-center items-start text-sm  px-8">
                 <p class="">Phone</p>
                 <input class="h-12 w-1/2 bg-white text-black border rounded-lg pl-4" type="text"
-                    placeholder="Enter your phone..." size="30">
+                    placeholder="Enter your phone..." size="30" name="newPhone">
             </div>
 
             <div class=" h-24 w-full flex flex-col justify-center items-start text-sm  px-8">
                 <p class="">Email</p>
                 <input class="h-12 w-1/2 bg-white text-black border rounded-lg pl-4" type="text"
-                    placeholder="Enter your email..." size="30" />
+                    placeholder="Enter your email..." size="30" name="newEmail" />
             </div>
 
             <div class=" h-24 w-full flex flex-col justify-center items-start text-sm  px-8">
                 <p class="">Password</p>
                 <input class=" h-12 w-1/2 bg-white text-black border rounded-lg pl-4" type="text"
-                    placeholder="Enter your new password..." size="30">
+                    placeholder="Enter your new password..." size="30" name="newPass">
             </div>
 
             <div class=" h-16 w-full flex  justify-start items-center text-sm  px-8">
