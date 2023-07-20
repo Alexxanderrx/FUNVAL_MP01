@@ -25,11 +25,12 @@ if (!isset($_SESSION["datos"])) {
             <img src="./imgs/devchallenges.svg" alt="devchallenges.svg" />
         </div>
         <div id="open" class="flex   justify-around items-center">
-            <div class=" rounded-md w-8 overflow-hidden">
-                <img src="./imgs/user_placeH.jpg" alt="photo.jpg">
+            <div class=" border rounded-md h-8 w-8 overflow-hidden">
+                <?php
+                echo "<img src='data:image/jpg; base64," . base64_encode($_SESSION["info_photo"]) . "'>";
+                ?>
             </div>
-            <p class=" pl-4 pr-4">Alex</p>
-
+            <p class="pl-4 pr-4"><?php echo $_SESSION["info_name"] ?></p>
             <svg id="spin" style="transition-duration: 500ms;" class="w-6 h-6  text-gray-800 dark:text-white"
                 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 30 8">
                 <path
@@ -56,7 +57,8 @@ if (!isset($_SESSION["datos"])) {
         </ul>
     </nav>
 
-    <form class="h-[50rem] flex flex-col justify-start items-center w-full " method="POST" action="updateHall.php">
+    <form class="h-[50rem] flex flex-col justify-start items-center w-full " method="POST" action="updateHall.php"
+        enctype="multipart/form-data">
         <!-- <p class="text-3xl mb-2 mt-4">Personal info</p> -->
         <a href="personalInfo.php" class="text-sky-500 w-3/5 mb-2 mt-4">&#60;&#160;Back</a>
 
@@ -72,19 +74,17 @@ if (!isset($_SESSION["datos"])) {
 
             <div class="h-20 w-full flex justify-start items-center text-sm  px-8">
                 <div class="border rounded-md h-12 w-12 overflow-hidden">
-
-                    <!-- <?php
-                            "<img src='data:image/jpg; base64," . base64_encode($_SESSION["info_photo"]) . "'>";
-                            ?> -->
-
-                    <!-- <?php
-                            $imagenPH = "./imgs/user_placeH.jpg";
-                            echo "<img src='" . $imagenPH . "'>";
-                            ?> -->
-                    <input class="hover:bg-gray-300 text-gray-500 border border-gray-400 rounded-lg" width="48"
-                        height="48" type="image" id="image" alt="Login" src="./imgs/user_placeH.jpg">
+                    <input type="image" style="opacity: 40%;"
+                        class="hover:bg-gray-300 text-gray-500 border border-gray-400 rounded-lg absolute" width="48"
+                        height="48" id="image" alt="Login" src="./imgs/user_placeH.jpg" disabled>
+                    <?php
+                    echo "<img  class='object-fill' src='data:image/jpg; base64," . base64_encode($_SESSION["info_photo"]) . "'>";
+                    ?>
                 </div>
-                <p class="w-2/6 pl-8 h-full flex items-center text-gray-400 text-sm">CHANGE PHOTO</p>
+
+                <input type="file" id="file-input" accept="image/*"
+                    class="w-2/6 pl-8 h-full flex items-center text-gray-400 text-sm" name="newPhoto">
+
             </div>
 
             <div class="h-24 w-full flex flex-col justify-center items-start text-sm  px-8">
