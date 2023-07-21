@@ -31,8 +31,8 @@ if (!isset($_SESSION["datos"])) {
                 ?>
             </div>
             <p class="pl-4 pr-4"><?php echo $_SESSION["info_name"] ?></p>
-            <svg id="spin" style="transition-duration: 500ms;" class="w-6 h-6  text-gray-800 dark:text-white"
-                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 30 8">
+            <svg id="spin" style="transition-duration: 500ms;" class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="-8 0 30 10">
                 <path
                     d="M15.434 1.235A2 2 0 0 0 13.586 0H2.414A2 2 0 0 0 1 3.414L6.586 9a2 2 0 0 0 2.828 0L15 3.414a2 2 0 0 0 .434-2.179Z" />
             </svg>
@@ -82,40 +82,113 @@ if (!isset($_SESSION["datos"])) {
                     ?>
                 </div>
 
-                <input type="file" id="file-input" accept="image/*"
-                    class="w-2/6 pl-8 h-full flex items-center text-gray-400 text-sm" name="newPhoto">
 
+                <div class="flex p-4">
+                    <!-- class="h-full flex items-center text-gray-500 text-sm" -->
+                    <input type="file" id="archivo" accept="image/*" class="fancy-file" name="newPhoto" required>
+                    <label class=" bg-white h-12 w-96 absolute" for="archivo">
+                        <span>CHANGE PHOTO</span>
+                    </label>
+
+                </div>
+
+
+
+
+                <p class="text-center  relative text-red-700">&#160;
+                    <?php
+                    if (isset($_SESSION["error_nophoto"])) {
+                        echo $_SESSION["error_nophoto"];
+                    };
+                    unset($_SESSION["error_nophoto"]);
+                    ?>
+                </p>
             </div>
 
             <div class="h-24 w-full flex flex-col justify-center items-start text-sm  px-8">
-                <p class="">Name</p>
+                <div class="flex">
+                    <p class="">Name</p>
+                    <!-- <p class="text-center  text-red-700">&#160;
+                        <?php
+                        if (isset($_SESSION["error_noname"])) {
+                            echo $_SESSION["error_noname"];
+                        };
+                        unset($_SESSION["error_noname"]);
+                        ?>
+                    </p> -->
+                </div>
                 <input class="h-12 w-1/2 bg-white text-black border rounded-lg pl-4" type="text"
-                    placeholder="Enter your name..." size="30" name="newName">
+                    placeholder="Enter your name..." size="30" name="newName" required>
             </div>
 
             <div class="h-24 w-full flex flex-col justify-center items-start text-sm  px-8">
-                <p class="">Bio</p>
+                <div class="flex">
+                    <p>Bio</p>
+                    <!-- <p class="text-center  text-red-700">&#160;
+                        <?php
+                        if (isset($_SESSION["error_nobio"])) {
+                            echo $_SESSION["error_nobio"];
+                        };
+                        unset($_SESSION["error_nobio"]);
+                        ?>
+                    </p> -->
+                </div>
                 <input class="h-24 w-1/2 bg-white text-black border rounded-lg pl-4 overflow-scroll" type="text"
                     placeholder="Enter your bio..." size="30" name="newBio">
             </div>
 
 
             <div class="h-24 w-full flex flex-col justify-center items-start text-sm  px-8">
-                <p class="">Phone</p>
+                <div class="flex">
+                    <p>Phone</p>
+                    <!-- <p class="text-center  text-red-700">&#160;
+                        <?php
+                        if (isset($_SESSION["error_nophone"])) {
+                            echo $_SESSION["error_nophone"];
+                        };
+                        unset($_SESSION["error_nophone"]);
+                        ?>
+                    </p> -->
+                </div>
                 <input class="h-12 w-1/2 bg-white text-black border rounded-lg pl-4" type="text"
                     placeholder="Enter your phone..." size="30" name="newPhone">
             </div>
 
             <div class=" h-24 w-full flex flex-col justify-center items-start text-sm  px-8">
-                <p class="">Email</p>
+                <div class="flex">
+                    <p>Email</p>
+                    <!-- <p class="text-center  text-red-700">&#160;
+                        <?php
+                        if (isset($_SESSION["error_update"])) {
+                            echo $_SESSION["error_update"];
+                        };
+                        unset($_SESSION["error_update"]);
+                        if (isset($_SESSION["error_noemail"])) {
+                            echo $_SESSION["error_noemail"];
+                        };
+                        unset($_SESSION["error_noemail"]);
+                        ?>
+                    </p> -->
+                </div>
+
                 <input class="h-12 w-1/2 bg-white text-black border rounded-lg pl-4" type="text"
-                    placeholder="Enter your email..." size="30" name="newEmail" />
+                    placeholder="Enter your email..." size="30" name="newEmail" required />
             </div>
 
             <div class=" h-24 w-full flex flex-col justify-center items-start text-sm  px-8">
-                <p class="">Password</p>
+                <div class="flex">
+                    <p>Password</p>
+                    <!-- <p class="text-center  text-red-700">&#160;
+                        <?php
+                        if (isset($_SESSION["error_nopass"])) {
+                            echo $_SESSION["error_nopass"];
+                        };
+                        unset($_SESSION["error_nopass"]);
+                        ?>
+                    </p> -->
+                </div>
                 <input class=" h-12 w-1/2 bg-white text-black border rounded-lg pl-4" type="text"
-                    placeholder="Enter your new password..." size="30" name="newPass">
+                    placeholder="Enter your new password..." size="30" name="newPass" required>
             </div>
 
             <div class=" h-16 w-full flex  justify-start items-center text-sm  px-8">

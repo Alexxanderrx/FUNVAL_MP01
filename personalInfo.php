@@ -25,7 +25,7 @@ if (!isset($_SESSION["datos"])) {
             <img src="./imgs/devchallenges.svg" alt="devchallenges.svg" />
         </div>
         <div id="open" class="flex justify-around items-center">
-            <div class=" border rounded-md h-8 w-8 overflow-hidden">
+            <div class="container border rounded-md h-8 w-8 overflow-hidden">
                 <?php
                 echo "<img src='data:image/jpg; base64," . base64_encode($_SESSION["info_photo"]) . "'>";
                 ?>
@@ -72,7 +72,7 @@ if (!isset($_SESSION["datos"])) {
                 <p class="w-2/6 h-full flex items-center text-gray-400 text-sm">PHOTO</p>
                 <div class="border rounded-md h-12 w-12 overflow-hidden">
                     <?php
-                    echo "<img alt='foto' src='data:image/jpg; base64," . base64_encode($_SESSION["info_photo"]) . "'>";
+                    echo "<img  src='data:image/jpg; base64," . base64_encode($_SESSION["info_photo"]) . "'>";
                     ?>
                 </div>
             </div>

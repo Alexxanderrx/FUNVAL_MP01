@@ -32,7 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             die();
         } else {
             $insertarUsers = "INSERT INTO users (email, password) VALUES ('$email_u','$pass_u');";
-
+            // require("pH.php");
+            // $phSS = $_SESSION["img_ph"];
+            // $insertarUsers_Info = "INSERT INTO users_info (email, password,photo) VALUES
+            // ('$email_u','$pass_u','$phSS');";
             $insertarUsers_Info = "INSERT INTO users_info (email, password) VALUES
             ('$email_u','$pass_u');";
 
@@ -47,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $datos = $resultado->fetch_assoc();
             $_SESSION["datos"] = $datos;
 
+            $_SESSION["info_id"] = $_SESSION["datos"]["id_info"];
             $_SESSION["info_photo"] = $_SESSION["datos"]["photo"];
             $_SESSION["info_name"] = $_SESSION["datos"]["name"];
             $_SESSION["info_bio"] = $_SESSION["datos"]["bio"];
