@@ -8,8 +8,10 @@
     <link href="./output.css" rel="stylesheet">
 </head>
 
-<body class=" h-screen flex justify-center align-items-center ">
-    <div class=" mt-12 w-96">
+
+<body class=" h-screen flex  justify-center align-items-center ">
+
+    <div class="flex flex-col justify-center align-items-center w-96">
         <form class="flex-col w-96 p-10 border border-gray-400 rounded-3xl" name="formularioSingUp" method="post" action="infoHall.php">
 
             <img class="mb-4" src="./imgs/devchallenges.svg" alt="devchallenges.svg" />
@@ -29,7 +31,7 @@
                             </svg>
                         </svg>
                     </span>
-                    <input class="block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" name="email" placeholder="Email" />
+                    <input class="block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" name="email" placeholder="Email" required />
                 </div>
 
                 <div class="relative block mb-2">
@@ -40,7 +42,7 @@
                             </svg>
                         </svg>
                     </span>
-                    <input class="block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" name="pass" placeholder="Password" />
+                    <input class="block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="password" name="pass" placeholder="Password" required />
                 </div>
 
             </div>

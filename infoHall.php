@@ -8,16 +8,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $pass_u = $_SESSION["pass_usuario"];
 
     require("connection.php");
+    // Hashear el password
+    $hash = password_hash($pass_u, PASSWORD_DEFAULT);
 
-
-    $tryLog = "SELECT * FROM users_info WHERE email = '$email_u' AND password = '$pass_u';";
+    //en caso que intente logearse desde el register o tenga el mismo email:v
     $sameEmail = "SELECT * FROM users_info WHERE email = '$email_u'";
 
-    $tryResult = $mysqli->query($tryLog);
+    $resultTryLg = $mysqli->query($sameEmail);
+    $datosTryLg = $resultTryLg->fetch_assoc();
+    $datosTryLgPass = $datosTryLg["password"];
 
-    $numFilas = $tryResult->num_rows;
-    // header("Location: personalInfo.php");
-    if ($numFilas === 1) {
+    if (password_verify($pass_u, $datosTryLgPass)) {
+
+        // }
+
+        //     $tryLog = "SELECT * FROM users_info WHERE email = '$email_u' AND password = '$datosTryLgPass';";
+        // $tryResult = $mysqli->query($tryLog);
+
+        // $numFilas = $tryResult->num_rows;
+        // if ($numFilas === 1) {
         $_SESSION["error_rg"] = "Are you trying to login?";
         header("Location: index.php");
         die();
@@ -31,19 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: index.php");
             die();
         } else {
-            $insertarUsers = "INSERT INTO users (email, password) VALUES ('$email_u','$pass_u');";
-            // require("pH.php");
-            // $phSS = $_SESSION["img_ph"];
-            // $insertarUsers_Info = "INSERT INTO users_info (email, password,photo) VALUES
-            // ('$email_u','$pass_u','$phSS');";
             $insertarUsers_Info = "INSERT INTO users_info (email, password) VALUES
-            ('$email_u','$pass_u');";
+            ('$email_u','$hash');";
 
-            $ejecutarDatos = $mysqli->query($insertarUsers);
-            $ejecutarDatos2 = $mysqli->query($insertarUsers_Info);
+            $ejecutarDatos = $mysqli->query($insertarUsers_Info);
 
-
-            $showInfo = "SELECT * FROM users_info WHERE email = '$email_u' AND password = '$pass_u';";
+            $showInfo = "SELECT * FROM users_info WHERE email = '$email_u' AND password = '$hash';";
 
             $resultado = $mysqli->query($showInfo);
 

@@ -16,40 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     $nNa = $_POST["newName"];
-    // if ($nNa == "") {
-    //     $_SESSION["error_noname"] = "Name is required *";
-    //     header("Location: updateInfo.php");
-    //     die();
-    // }
 
     $nBi = $_POST["newBio"];
-    // if ($nBi == "") {
-    //     $_SESSION["error_nobio"] = "Bio is required *";
-    //     header("Location: updateInfo.php");
-    //     die();
-    // }
 
     $nPh = $_POST["newPhone"];
-    // if ($nPh == "") {
-    //     $_SESSION["error_nophone"] = "Phone is required *";
-    //     header("Location: updateInfo.php");
-    //     die();
-    // }
 
     $nEm = $_POST["newEmail"];
-    // if ($nEm == "") {
-    //     $_SESSION["error_noemail"] = "Email is required **";
-    //     header("Location: updateInfo.php");
-    //     die();
-    // }
 
     $nPa = $_POST["newPass"];
-    // if ($nPa == "") {
-    //     $_SESSION["error_nopass"] = "Password is required *";
-    //     header("Location: updateInfo.php");
-    //     die();
-    // }
-
 
     $dId = $_SESSION["info_id"];
     $dEmail = $_SESSION["info_email"];
@@ -63,9 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         header("Location: updateInfo.php");
         die();
     }
+    //nuevo Pass nuevo hash
+    $nHash = password_hash($nPa, PASSWORD_DEFAULT);
 
-
-    $update = "UPDATE users_info set photo = '$nPo', name = '$nNa',bio = '$nBi',phone = '$nPh',email = '$nEm',password = '$nPa'  WHERE id_info = '$dId';";
+    $update = "UPDATE users_info set photo = '$nPo', name = '$nNa',bio = '$nBi',phone = '$nPh',email = '$nEm',password = '$nHash'  WHERE id_info = '$dId';";
 
     $updateDatos = $mysqli->query($update);
 

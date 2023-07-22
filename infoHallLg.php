@@ -9,7 +9,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $eLG = $_SESSION["email_Lg"];
     $pLG = $_SESSION["pass_Lg"];
-    $show = "SELECT * FROM users_info WHERE email = '$eLG' AND password = '$pLG';";
+
+    $resultVey = $mysqli->query("SELECT * FROM users_info WHERE email = '$eLG'");
+    $datosVery = $resultVey->fetch_assoc();
+
+    if (password_verify($pLG, $datosVery["password"])) {
+        $show = "SELECT * FROM users_info WHERE email = '$eLG'";
+    } else {
+        $show = "SELECT * FROM users_info WHERE email = '$eLG' AND password = '$pLG'";
+    }
 } else {
     //si NO es POST inicia secion con id
     $dId = $_SESSION["info_id"];
@@ -43,7 +51,7 @@ if ($numFilas === 1) {
 
     header("Location: personalInfo.php");
 } else {
-    $_SESSION["error_lg"] = "La cuenta no existe.";
+    $_SESSION["error_lg"] = "Wrong email or password.";
     header("Location: login.php");
     die();
 }
