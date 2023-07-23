@@ -20,21 +20,7 @@ Email: gatopelon@gmail.com
 Password: pelon
 </div>
 
-<div align="center">
-  <h3>
-    <a href="https://{your-demo-link.your-domain}">
-      Demo
-    </a>
-    <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
-      Solution
-    </a>
-    <span> | </span>
-    <a href="https://devchallenges.io/challenges/N1fvBjQfhlkctmwj1tnw">
-      Challenge
-    </a>
-  </h3>
-</div>
+NO OLVIDAR CREAR UNA BD CON EL NOMBRE : mp_01
 
 ### Built With
 
