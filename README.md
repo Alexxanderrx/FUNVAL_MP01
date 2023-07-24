@@ -28,10 +28,10 @@ Password: pelon
    Solo puede haber un usuario con un mismo email (si se registrar un usuario con un email existente saldra un mesaje y se le impedirar realizar esa accion )
    </li>
    <li>
-   -Si se intenta logear desde la pantalla de registro(y la cuenta existe) le saldra un mensaje preguntandole se intenta logear.(Esto debebido a ser mas amable con el ususario y que ambas pantalla son muy similares)
+   Si se intenta logear desde la pantalla de registro(y la cuenta existe) le saldra un mensaje preguntandole se intenta logear.(Esto debebido a ser mas amable con el ususario y que ambas pantalla son muy similares)
    </li>
    <li>
-   -En la ventana para editar los datos del usuario los campos: PHOTO, NAME, EMAIL,PASSWORD son obligatorios.
+   En la ventana para editar los datos del usuario los campos: PHOTO, NAME, EMAIL,PASSWORD son obligatorios.
    </li>
 </ul>
 
