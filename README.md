@@ -6,7 +6,7 @@
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
 </div>
 
-NO OLVIDAR CREAR UNA BD CON EL NOMBRE : mp_01
+El archivo .sql creará una BD con el nombre 'mp_01' y una tabla con el nombre 'user_info'.
 
 <div>
 
