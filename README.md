@@ -32,7 +32,7 @@ Password: pelon
    </li>
    <li>
    -En la ventana para editar los datos del usuario los campos: PHOTO, NAME, EMAIL,PASSWORD son obligatorios.
-   <li>
+   </li>
 </ul>
 
 ### Built With
