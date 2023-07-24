@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -53,7 +54,6 @@
             </div>
             <p class="text-center mb-1  text-red-700">&#160;
                 <?php
-                session_start();
                 if (isset($_SESSION["error_rg"])) {
                     echo $_SESSION["error_rg"];
                 };
