@@ -6,6 +6,8 @@
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
 </div>
 
+NO OLVIDAR CREAR UNA BD CON EL NOMBRE : mp_01
+
 <div>
 
 ### Usuarios de prueba
@@ -20,7 +22,7 @@ Email: gatopelon@gmail.com
 Password: pelon
 </div>
 
-NO OLVIDAR CREAR UNA BD CON EL NOMBRE : mp_01
+
 
 ### Built With
 

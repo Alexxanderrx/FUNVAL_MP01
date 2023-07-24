@@ -19,8 +19,8 @@ if (!isset($_SESSION["datos"])) {
     <link href="./output.css" rel="stylesheet">
 </head>
 
-<body class="flex flex-col justify-center items-center h-[50rem] w-screen">
-    <nav class="flex  pl-10 pr-10 w-full h-16 justify-between items-center ">
+<body class="flex  flex-col justify-center items-center h-[50rem] w-screen">
+    <nav class="flex  md:px-10 px-6 w-full h-16 justify-between items-center ">
         <div class="w-32">
             <img src="./imgs/devchallenges.svg" alt="devchallenges.svg" />
         </div>
@@ -132,8 +132,6 @@ if (!isset($_SESSION["datos"])) {
         </div>
 
     </form>
-
-
 </body>
 
 </html>
