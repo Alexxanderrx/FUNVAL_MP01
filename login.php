@@ -23,7 +23,7 @@
 
             <img class="md:mb-4 mb-14" src="./imgs/devchallenges.svg" alt="devchallenges.svg" />
 
-            <p style="font-family: 'Noto Sans', sans-serif;" class="mb-4 font-semibold text-lg">Login</h4>
+            <p style="font-family: 'Noto Sans', sans-serif;" class="mb-4 font-semibold text-lg">Login</p>
 
             <div>
 
